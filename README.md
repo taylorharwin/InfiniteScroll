@@ -38,7 +38,7 @@ Taylor Harwin. (taylor.harwin@gmail.com) @taylorharwin
 
 Additional Notes
 --------------
-The code for this project is heavily commented, so must of the tutorial information is in the project itself. It is worth noting that the design is meant to be highly modular (the directive can be used anywhere in an application, and will automatically fill whatever container it's placed in. This project uses Bootstrap's grid layout to handle design responsivity. 
+The code for this project is heavily commented, so the tutorial information is in the project itself. It is worth noting that the design is meant to be highly modular (the directive can be used anywhere in an application, and will automatically fill whatever container it's placed in. This project uses Bootstrap's grid layout to handle design responsivity. 
 
 Please submit pull requests to improve this project, and/or let me know how I could improve upon it. Happy scrolling!
 

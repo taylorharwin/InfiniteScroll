@@ -27,3 +27,7 @@ This is acceptable, since scrolling through unequal items is a poor user experie
   bottom: 0;
   margin: auto;
 }
+
+.loading {
+  padding-top: 50px;
+}

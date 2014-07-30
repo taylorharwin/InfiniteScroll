@@ -20,8 +20,7 @@ angular.module('ScrollTest.directives', [])
     },
 
     link: function (scope, element) {
-      console.log(scope.limit);
-
+      scope.loading = true;
       // Makes a new array of information to be added to collection. Each item has a unique ID, to ensure that duplicate content isn't a problem, and to mimic content coming from a DB. This function is invoked within a setTimeout in order to roughly mock up an AJAX call. 
       // A realistic version of this app would make an ajax call with $http, or with a function on a REST service that has been injected
 
@@ -41,14 +40,14 @@ angular.module('ScrollTest.directives', [])
     // Could also detect when scroll is at a midpoint, in order to start loading while user still has content to view. Once this event occurs, set a boolean to indicate that new data is being loaded. Show something to the user indicating this, using ng-show.
       element.on('scroll', function (event) {
         if (this.scrollTop === this.scrollHeight - this.offsetHeight) {
-          scope.loading = true;
+          scope.loading = !scope.loading;
 
           //Records the fact that new content is being loaded. Uses a random number between 0 and 1 second to mimic potential delay in getting data from server. This assumes the server would never drop a connection, which is most definitely generous
           var fakeDelay = Math.random() * 1000;
 
           $timeout(function () {
             scope.$apply(function () {
-              scope.loading = false;
+              scope.loading = !scope.loading;
               var newContent = scope.getNewContent(scope.contents);
 
               angular.forEach(newContent, function (item) {
