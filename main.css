@@ -1,14 +1,20 @@
+/*This is the class of the parent element for the scroller directive
+*/
 .scroller {
   overflow: auto;
   height: 500px;
 }
 
+/*The class for any individual element within the scroll. It assumes that it will not be provided content that exceeds 100px in height. 
+This is acceptable, since scrolling through unequal items is a poor user experience.*/
 .material {
   height:100px;
   width:100%;
   list-style-type: none;
 }
 
+/*Ensures that images passed to ng-repeat maintain a consistent aspect ratio
+*/
 .img
 {
   position: relative;
