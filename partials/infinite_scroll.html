@@ -1,1 +1,6 @@
-<h1> Hi </hi>
+<ul class="scroller">
+  <li class="material" ng-repeat="stuff in contents"> 
+    <span class="text" ng-if="stuff.text">{{ stuff.text }}</span>
+    <img class="img" ng-if="stuff.image" ng-src = "{{stuff.image}}"/>
+  </li>
+</ul>

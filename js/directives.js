@@ -6,9 +6,10 @@ angular.module('ScrollTest.directives', [])
   .directive('scroller', function () {
     return {restrict: 'E',
      replace: 'true',
-     template: '<h2 ng-repeat="stuff in contents"> {{stuff.name}}</h2>',
+     templateUrl: 'partials/infinite_scroll.html',
      scope: {
       contents: '=contents'
+
     }
 
   };
