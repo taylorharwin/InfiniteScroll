@@ -1,0 +1,22 @@
+{
+  "name": "InfiniteScroll",
+  "version": "0.0.0",
+  "authors": [
+    "Taylor Harwin <taylor.harwin@gmail.com>"
+  ],
+  "description": "Test app for infinite scroll directive",
+  "main": "index.html",
+  "license": "MIT",
+  "homepage": "www.taylorharwin.com",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.2.21",
+    "bootstrap": "~3.2.0"
+  }
+}
