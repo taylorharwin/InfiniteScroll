@@ -1,5 +1,5 @@
 <ul class="scroller">
-  <li class="material" ng-repeat="stuff in contents"> 
+  <li class="material" ng-repeat="stuff in contents track by $index"> 
     <span class="text" ng-if="stuff.text">{{ stuff.text }}</span>
     <img class="img" ng-if="stuff.image" ng-src = "{{stuff.image}}"/>
   </li>

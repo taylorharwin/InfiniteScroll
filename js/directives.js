@@ -14,15 +14,39 @@ angular.module('ScrollTest.directives', [])
      replace: 'true',
      templateUrl: 'partials/infinite_scroll.html',
      scope: {
-      contents: '=contents'
+      contents: '=contents',
+      title: '=title',
+      limit: '=limit'
     },
 
-    // Adding an event listener to detect when a scroll has reached the end of a list of available elements
     link: function (scope, element) {
+
+      // Makes a new array of information to be added to collection. Each item has a unique ID, to ensure that duplicate content isn't a problem. This is tied to the ng-tracThis function is invoked within a setTimeout in order to roughly mock up an AJAX call. 
+      // A realistic version of this app would make an ajax call with $http, or with a function on a REST service that has been injected
+
+      scope.getNewContent = function (arr) {
+        var maxId = arr[arr.length - 1].id + 1;
+        var newArr = [];
+        for (var i = 0; i <= 3; i++) {
+          var item = arr[i];
+          item.id = maxId
+          newArr.push(item);
+          console.log(item.id);
+          maxId++;
+        }
+        return newArr;
+      };
+
+    // Adds an event listener to detect when a scroll has reached the end of the list of available elements. 
+    // Could also detect when scroll is at some midpoint, in order to start loading while user still has content to view
       element.on('scroll', function (event) {
-        var number = this.offsetHeight;
         if (this.scrollTop === this.scrollHeight - this.offsetHeight) {
-          console.log('at Bottom');
+          scope.$apply(function () {
+            var newContent = scope.getNewContent(scope.contents);
+            angular.forEach(newContent, function (item) {
+              scope.contents.push(item);
+            });
+          });
         }
   
       });

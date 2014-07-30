@@ -1,21 +1,21 @@
-<!-- A template that contains three different instances of the infinite scroll directive, in order to demonstrate its modularity
+<!-- A template that contains three different instances of the infinite scroll directive. This is meant to demonstrate the modularity of the directive
  -->
 
 <div class="container">
 
   <div class="col-md-4">
-    <h1>Repeats A</h1>
-    <scroller contents="dataA"></scroller>
+    <h1>Scroller One</h1>
+    <scroller contents="dataA" title="'dataA'" limit=5></scroller>
   </div>
 
   <div class="col-md-4">
-    <h1>Repeats B</h1>
-    <scroller contents="dataB"></scroller>
+    <h1>Scroller Two</h1>
+    <scroller contents="dataB" title="'dataB'" limit=20></scroller>
   </div>
 
   <div class="col-md-4">
-    <h1> Repeats C</h1>
-    <scroller contents="dataC"></scroller>
+    <h1> Scroller Three</h1>
+    <scroller contents="dataC" title="'dataC'" limit=20></scroller>
   </div>
 
 </div>
