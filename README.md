@@ -20,7 +20,7 @@ This repo contains:
 * HTML template for any instance of the directive
 * A simple CSS file to provide styling for the scroll box and its contents
 * An assets/ directory containing .jpg images of cats used to demonstrate infinite image loading
-* A Bower.json file for tracking dependencies (Bootstrap, Angular, and Angular Router so far)
+* A Bower.json file for tracking dependencies (Bootstrap, Angular, and Angular Router so far). Although jQuery will be installed with Bootstrap, it is not used in this project
 
 How to run
 --------------
